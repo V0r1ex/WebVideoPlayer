@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoPlayer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b999e0817b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="videoPlayer">
+        <video id="film" src="video.mp4" type="video/mp4"></video>
+        <button class="iconButton">
+            <div class="iconContainer">
+                <i class="fa-solid fa-play"></i>
+            </div>
+        </button>
+        <div class="controls">
+            <div class="timline">
+                <div class="progressContainer">
+                    <progress min="0" max="100" value="0"></progress>
+                    <div class="slider"></div>
+                </div>
+                <span class="time"><span class="timeNow">00:00</span> / <span class="timeFull"></span></span>
+            </div>
+            <div class="buttons">
+                <button class="playBtn"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+                <button class="fullScreenBtn"><i class="fa-solid fa-arrows-alt" aria-hidden="true"></i></button>
+                <div class="volumeContainer">
+                    <button class="volumeSet"><i class="fa-solid fa-volume-up" aria-hidden="true"></i></button>
+                    <input class="volumeRange" type="range" min="0" max="100" value="100" name="volume" id="">
+                </div>   
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

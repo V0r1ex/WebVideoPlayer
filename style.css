@@ -1,0 +1,176 @@
+.videoPlayer {
+    height: fit-content;
+    color: #e6e6e6;
+    width: 40%;
+    position: relative;
+  }
+.videoPlayer .iconButton {
+    position: absolute;
+    background: none;
+    color: #e6e6e6;
+    border: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+.videoPlayer .iconButton:hover {
+    color: #6cb33d;
+}
+.videoPlayer video {
+    resize: both;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+.videoPlayer .controls {
+    transition: 0.5s;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.buttons {
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.buttons button {
+    color: #e6e6e6;
+    background: none;
+    border: none;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+}
+.buttons button:hover {
+    color: #6cb33d;
+}
+.buttons .volumeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons .volumeContainer input {
+    transition: 0.5s ease-out;
+    opacity: 0;
+    width: 0;
+}
+.buttons .volumeContainer .active {
+    opacity: 1;
+    width: 150px;
+}
+.optionsContainer {
+    position: relative;
+}
+.listOptions {
+    opacity: 0;
+    transition: 0.5s;
+    width: 300px;
+    z-index: 10;
+    pointer-events: none;
+    position: absolute;
+    top: -230px;
+    left: 0;
+    border-radius: 5px;
+    background-color: rgba(32, 32, 32, 0.5);
+    padding: 10px;
+}
+.listOptions .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    height: 40px;
+}
+.listOptions .option .nameOption {
+    display: inline-block;
+    width: 70px;
+}
+.listOptions .option button .fa {
+    font-size: 20px;
+}
+.listOptions .option .size input, .listOptions .option .speed input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    padding: 6px;
+    background-color: #fff;
+    height: 25px;
+}
+.buttons .optionsContainer .active {
+opacity: 1;
+pointer-events: all;
+}
+.controls .buttons input[type=range] {
+    appearance: none !important;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: #fff;
+    height: 8px;
+    border-radius: 10px;
+}
+.controls .buttons input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background-color: #6cb33d;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+.timline {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.timline .time {
+    pointer-events: none;
+}
+.timline progress {
+    height: 12px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.timline progress::-webkit-progress-bar {
+    border-radius: 4px;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+.timline progress::-webkit-progress-value {
+    border-radius: 4px;
+    background-color: #6cb33d;
+}
+.timline .slider {
+    z-index: 10px;
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    left: -7.5px;
+    top: -1px;
+    width: 15px;
+    height: 15px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+}
+@keyframes play {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+@keyframes pause {
+    0% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
